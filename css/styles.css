@@ -1,0 +1,130 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    width: 300px;
+}
+
+div .container {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.popup {
+    width: 300px;
+    height: 100%;
+    background-color: #c26b6b;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(61, 61, 61);
+}
+
+.selection::selection {
+    color: rgb(61, 61, 61);
+    background-color: #cecece;
+    text-shadow: #727272;
+}
+
+div .form-control {
+    color: rgb(107, 107, 107);
+    background-color: rgb(247, 247, 247);
+    border: 0px;
+    width: 100%;
+}
+
+div .form-control:focus {
+    color: rgb(131, 64, 64);
+    background-color: rgb(236, 236, 236);
+    border-color: #c26b6b;
+    box-shadow: 2px 2px 4px 0.1rem rgba(175, 101, 101, 0.25);
+}
+
+.image {
+    height: 200px;
+    background-color: #c26b6b;
+}
+
+div .formulario {
+    background: white;
+    border-radius: 18px 18px 0 0;
+}
+
+.boton {
+    padding-top: 2rem;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div .btn-primary {
+    color: white;
+    background-color: #c26b6b;
+    border-color: #c26b6b;
+}
+
+div .btn-primary:hover {
+    color: white;
+    background-color: #ad5d5d;
+    border-color: #c26b6b;
+    box-shadow: 0 0 0 0.15rem rgba(175, 101, 101, 0.20);
+}
+
+div .btn-primary:focus,
+div .btn-primary.focus {
+    color: white;
+    background-color: #c26b6b;
+    border-color: #c26b6b;
+    box-shadow: 0 0 0 0.15rem rgba(175, 101, 101, 0.25);
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    color: #fff;
+    background-color: #ce7676;
+    border-color: #d67b7b;
+}
+
+
+div .btn-primary:not(:disabled):not(.disabled):active,
+div .btn-primary:not(:disabled):not(.disabled).active,
+div .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #974949;
+    border-color: #944444;
+}
+
+div .btn-primary:not(:disabled):not(.disabled):active:focus,
+div .btn-primary:not(:disabled):not(.disabled).active:focus,
+div .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.15rem rgba(150, 79, 79, 0.2);
+}
+
+.espaciado {
+    padding-top: 0.5rem;
+}
+
+.foot {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+}
+
+div a {
+    color: #969696;
+}
+
+div a:hover {
+    color: #424242;
+}
+
+div span {
+    color: rgb(61, 61, 61);
+}
+
+.center {
+    text-align: center;
+}

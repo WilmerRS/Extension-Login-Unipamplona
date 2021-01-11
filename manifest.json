@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "Gestor de contraseñas UP ",
+    "description": "*Permite escribir la contraseña de usuario directamente, y no mediante un código cifrado ",
+    "version": "1.0",
+    "icons": {
+        "128" : "./res/favicon-2.png"
+    },
+    "permissions": [
+        "activeTab",
+        "contentSettings",
+        "declarativeContent",
+        "storage"
+    ],
+    "background": {
+        "scripts": [
+            "./js/background.js"
+        ],
+        "persistent": false
+    },
+    "page_action": {
+        "default_popup": "./popup/popup.html",
+        "default_icon": "./res/favicon-2.png",
+        "default_title": "UP"
+    }
+}
