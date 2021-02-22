@@ -1,63 +1,96 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UP</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
     <!-- TIPOGRAFIAS -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="popup">
-        <div class="">
-            <div class="image">
-
+      <div class="">
+        <div class="image"></div>
+        <form class="formulario container" id="form_login" name="form_login">
+          <div class="espaciado">
+            <h1 class="titulo selection">Iniciar sesión</h1>
+          </div>
+          <div class="espaciado">
+            <!-- Solicitud Usuario -->
+            <div>
+              <span class="selection">Usuario</span>
             </div>
-            <form class="formulario container" id="form_login" name="form_login">
-                <div class=" espaciado">
-                    <h1 class="titulo selection">Iniciar sesión</h1>
-                </div>
-                <div class="espaciado">
-
-                    <!-- Solicitud Usuario -->
-                    <div>
-                        <span class="selection">Usuario </span>
-                    </div>
-                    <!-- form usuario -->
-                    <div class="">
-                        <input class="user form-control" id="username" name="user" type="text" placeholder="Usuario" maxlength="20">
-                    </div>
-                </div>
-                <div class="espaciado">
-                    <!-- Solicitud Contraseña -->
-                    <div>
-                        <span class="selection">Contraseña </span>
-                    </div>
-                    <div class="">
-                        <input class="user form-control" id="password" name="password" type="password"
-                            placeholder="Contraseña" maxlength="20">
-                    </div>
-                </div>
-                <!-- Boton que envia el formulario -->
-                <div class="center boton">
-                    <input class="btn btn-primary" id="btnDecode" name="btn" type="button" value="DECODIFICAR">
-                </div>
-                <div class="center espaciado">
-                    <a href="" class="selection">Acerca de </a>
-                </div>
-            </form>
-            <footer class="foot">
-                <span></span>
-            </footer>
-        </div>
+            <!-- form usuario -->
+            <div class="">
+              <input
+                class="user form-control"
+                id="username"
+                name="user"
+                type="text"
+                placeholder="Usuario"
+                maxlength="25"
+              />
+            </div>
+          </div>
+          <div class="espaciado">
+            <!-- Solicitud Contraseña -->
+            <div>
+              <span class="selection">Contraseña</span>
+            </div>
+            <div class="">
+              <input
+                class="user form-control"
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Contraseña"
+                maxlength="25"
+              />
+            </div>
+            <div class="pt-1">
+              <input type="checkbox" id="rememberCheck"/>
+              <label for="rememberCheck">Recordar usuario</label>
+            </div>
+          </div>
+          <!-- Boton que envia el formulario -->
+          <div class="center boton">
+            <input
+              class="btn btn-primary"
+              id="btnDecode"
+              name="btnDecode"
+              type="button"
+              value="DECODIFICAR"
+            />
+          </div>
+          <div class="center boton">
+            <input
+              class="btn btn-primary"
+              id="btnDeleteUser"
+              name="btnDeleteUser"
+              type="button"
+              value="Borrar usuario"
+            />
+          </div>
+          <div class="center espaciado">
+            <a href="" class="selection">Acerca de </a>
+          </div>
+        </form>
+        <footer class="foot">
+          <span></span>
+        </footer>
+      </div>
     </div>
     <script src="../js/script.js"></script>
-</body>
-
+  </body>
 </html>

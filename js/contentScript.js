@@ -51,6 +51,9 @@ function overwriteDocument(user, password) {
     mainFrame.document.getElementById("usuario").value = user;
     mainFrame.document.getElementById("password").value = password;
     mainFrame.document.getElementsByName("btnIngresar")[0].click();
+
+    // Sirve para comprobar si se ha iniciado sesión correctamente
+    return mainFrame.document.getElementsByName("topFrame");
 }
 
 /**
@@ -59,14 +62,24 @@ function overwriteDocument(user, password) {
  */
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
-
         var decodedPassword = decode(request.password);
+        var resultSession = overwriteDocument(request.username, decodedPassword);
 
-        if (decodedPassword != null) {
-            overwriteDocument(request.username, decodedPassword);
-            sendResponse({ replication: "Done" });
+        // Si se ha iniciado sesión correctamente
+        if (resultSession != null || resultSession != undefined) {
+            sendResponse({
+                replication: "Done", 
+                username: request.username, 
+                password: request.password,
+                rememberCheck: request.rememberCheck 
+            });
         } else {
-            sendResponse({ replication: "Error" });
+            sendResponse({
+                replication: "Error", 
+                username: request.username, 
+                password: request.password,
+                rememberCheck: request.rememberCheck
+            }); 
         }
     }
 );
