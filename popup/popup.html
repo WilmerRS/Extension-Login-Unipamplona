@@ -22,7 +22,7 @@
     <div class="popup">
       <div class="">
         <div class="image"></div>
-        <form class="formulario container" id="form_login" name="form_login">
+        <form class="formulario container" id="signup" method="post" >
           <div class="espaciado">
             <h1 class="titulo selection">Iniciar sesión</h1>
           </div>
@@ -36,10 +36,12 @@
               <input
                 class="user form-control"
                 id="username"
-                name="user"
+                name="username"
+                autocomplete="username"
                 type="text"
                 placeholder="Usuario"
                 maxlength="25"
+                autofocus
               />
             </div>
           </div>
@@ -51,9 +53,10 @@
             <div class="">
               <input
                 class="user form-control"
-                id="password"
-                name="password"
+                id="current-password"
+                name="current-password"
                 type="password"
+                autocomplete="current-password"
                 placeholder="Contraseña"
                 maxlength="25"
               />
@@ -69,7 +72,7 @@
               class="btn btn-primary"
               id="btnDecode"
               name="btnDecode"
-              type="button"
+              type="submit"
               value="DECODIFICAR"
             />
           </div>

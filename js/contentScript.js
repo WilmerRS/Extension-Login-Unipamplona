@@ -71,7 +71,7 @@ chrome.runtime.onMessage.addListener(
                 replication: "Done", 
                 username: request.username, 
                 password: request.password,
-                rememberCheck: request.rememberCheck 
+                rememberCheck: request.rememberCheck
             });
         } else {
             sendResponse({

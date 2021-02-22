@@ -8,9 +8,14 @@ const VORTAL_PASSWORD= "VORTAL_PASSWORD_UNIPAMPLONA";
 /**
  * Se obtiene el botón Decodificar
  */
-var btnDecode = document.getElementById("btnDecode");
+//var btnDecode = document.getElementById("btnDecode");
 
 var btnDeleteUser = document.getElementById("btnDeleteUser");
+
+/**
+ * Objeto de formulario de inicio de sesión
+ */
+var form = document.getElementById('signup');
 
 
 /**
@@ -18,13 +23,14 @@ var btnDeleteUser = document.getElementById("btnDeleteUser");
  * Este debe enviar el usuario y la contraseña al script de contenido.
  * Y debe obtener la respuesta de dicha operación.
  */
-btnDecode.onclick = function () {
-
+form.addEventListener('submit', event=> {
+    event.preventDefault();
+  
     /**
      * Se obtiene el nombre de usuario y la contraseña registrados en el formulario.
      */
     var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+    var password = document.getElementById("current-password").value;
 
     /**
      * Se obtiene el valor booleano correspondiete al deseo de guadar los datos de usuario
@@ -42,9 +48,8 @@ btnDecode.onclick = function () {
      * Envia el mensaje con los datos del usuario.
      * Recibe el resultado de la operación.
      */
-    
-        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            chrome.tabs.sendMessage(
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(
             tabs[0].id,
             {
                 username: username,
@@ -65,10 +70,9 @@ btnDecode.onclick = function () {
                     console.log("Se ha generado un error. ",error)
                 }
             }
-        );});
-    
-    
-};
+        );
+    });
+});
 
 /**
  * Se define la función correspondiente al evento click.
@@ -130,7 +134,7 @@ function getUserValue(){
     }
 
     document.getElementById("username").value = localStorage.getItem(VORTAL_USERNAME);
-    document.getElementById("password").value = localStorage.getItem(VORTAL_PASSWORD);
+    document.getElementById("current-password").value = localStorage.getItem(VORTAL_PASSWORD);
 }
 
 /**
@@ -138,7 +142,7 @@ function getUserValue(){
  */
 function resetUserValue(){
     document.getElementById("username").value = "";
-    document.getElementById("password").value = "";
+    document.getElementById("current-password").value = "";
 }
 
 /**
