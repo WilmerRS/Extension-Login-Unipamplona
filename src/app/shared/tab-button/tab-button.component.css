@@ -1,0 +1,19 @@
+a > i {
+  color: rgb(61, 59, 59);
+  text-align: center;
+}
+
+div > a {
+  padding: 0px;
+  text-align: center;
+}
+
+.button {
+  border-radius: 10px;
+  width: 80px;
+}
+
+a > .activo {
+  color: rgb(151, 16, 16);
+  
+}

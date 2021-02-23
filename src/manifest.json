@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Gestor de contraseñas UP ",
+    "description": "Permite escribir la contraseña de usuario directamente, y no mediante un código cifrado ",
+    "version": "1.1",
+    "icons":
+        {
+        "128" : "favicon.ico"
+        },
+    "permissions": [
+        "activeTab",
+        "contentSettings",
+        "declarativeContent",
+        "storage"
+    ],
+    "background": {
+        "scripts": [
+            "extension/background.js"
+        ],
+        "persistent": false
+    },
+    "page_action": {
+        "default_popup": "index.html",
+        "default_icon": "favicon.ico",
+        "default_title": "Sing-in unipamplona"
+    }
+}
