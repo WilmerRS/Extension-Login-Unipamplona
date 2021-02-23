@@ -12,7 +12,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: SingInComponent
+        redirectTo: '/home',
+         pathMatch: 'full'
       },
       {
         path: 'home',

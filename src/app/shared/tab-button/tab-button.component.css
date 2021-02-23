@@ -15,5 +15,23 @@ div > a {
 
 a > .activo {
   color: rgb(151, 16, 16);
-  
+}
+
+.pt-1{
+  padding-top: 8px;
+}
+
+.bar {
+  width: 80px;
+  position: absolute;
+  height: 4px;
+  background-color: #a31621;
+  margin-bottom: -16px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+}
+
+.buttonTab {
+  outline: none;
+  border: 0;
 }
