@@ -11,6 +11,7 @@ import { SingInComponent } from './pages/sing-in/sing-in.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { CredencialManagerComponent } from './pages/credencial-manager/credencial-manager.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BackgroundBlobsComponent } from './shared/background-blobs/background-blobs.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SingInComponent,
     AboutUsComponent,
     CredencialManagerComponent,
+    BackgroundBlobsComponent,
   ],
   imports: [
     BrowserModule,

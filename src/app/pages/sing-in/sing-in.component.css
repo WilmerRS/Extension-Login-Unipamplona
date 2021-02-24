@@ -1,0 +1,117 @@
+.cardLogin {
+  background-color: white;
+  padding-top: 2px;
+  padding-bottom: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 10px var(--gris);
+}
+
+div > .border-r {
+  border-radius: 5px;
+}
+
+.mb-0 {
+  margin: 3px;
+}
+
+.ml-1 {
+  margin-left: 8px;
+}
+
+a > .colorBtnIcon {
+  color: white;
+}
+
+a > .colorInfo {
+  color: var(--gris-oscuro);
+}
+a > .colorInfo:hover {
+  color: var(--vinotinto);
+}
+
+.size {
+  font-size: 2.5rem;
+}
+
+div > a {
+  padding: 0px;
+}
+
+.center-h {
+  display: flex;
+  justify-content: center;
+}
+
+.center-v {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  border-radius: 10px;
+  height: 40px;
+  background-color: var(--vinotinto);
+}
+
+.p-1 {
+  padding-left: 13px;
+}
+
+.pl-1 {
+  padding-left: 14px;
+}
+
+label > .pl-2 {
+  padding-left: 27px;
+}
+
+.font-btn {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.button:hover {
+  background-color: var(--vinotinto-hover);
+}
+
+.buttonTab {
+  outline: none;
+  border: 0;
+}
+.checkbox {
+  width: 40px;
+}
+
+input[type=checkbox] {
+  transform: scale(0.2);
+}
+
+span.field-icon {
+  float: right;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+span.field-icon {
+  float: right;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.eye-icon {
+  font-size: 1.3rem;
+  padding-right: 10px;
+  padding-top:3px;
+  color: var(--gris-oscuro);
+}
+
+.eye-icon:hover {
+  color: var(--vinotinto);
+}

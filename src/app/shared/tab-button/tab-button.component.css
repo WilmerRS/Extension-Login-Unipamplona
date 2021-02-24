@@ -1,31 +1,33 @@
 a > i {
-  color: rgb(61, 59, 59);
+  color: var(--gris-oscuro);
   text-align: center;
 }
 
 div > a {
   padding: 0px;
-  text-align: center;
 }
 
 .button {
   border-radius: 10px;
   width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 
 a > .activo {
-  color: rgb(151, 16, 16);
+  color: var(--vinotinto);
 }
 
 .pt-1{
-  padding-top: 8px;
+  padding-top: 10px;
 }
 
 .bar {
   width: 80px;
   position: absolute;
   height: 4px;
-  background-color: #a31621;
+  background-color:var(--vinotinto);
   margin-bottom: -16px;
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;

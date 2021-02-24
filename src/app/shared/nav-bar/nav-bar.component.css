@@ -1,5 +1,6 @@
 nav {
-  box-shadow: 0px -5px 10px rgb(211, 211, 211);
+  box-shadow: 0px -6px 10px var(--gris);
+  background-color: white;
 }
 
 .p-3 {

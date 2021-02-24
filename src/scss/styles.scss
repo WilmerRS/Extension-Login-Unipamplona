@@ -2,8 +2,25 @@
 
 @import "./materialize-imports.scss";
 
+:root {
+  --vinotinto: rgb(151, 16, 16);
+  --vinotinto-hover: rgb(196, 18, 18);
+  --gris: rgb(226, 226, 226);
+  --gris-oscuro: rgb(61, 59, 59);
+}
+
 html {
-    width: 300px;
-    margin: 0px;
-    padding: 0px;
+  width: 300px;
+  margin: 0px;
+  padding: 0px;
+}
+
+*::selection {
+    background-color: #e1cfcf;
+    color: #681111;
+}
+ 
+*::-moz-selection {
+    background-color:#E1D8CF;
+    color: #681111;
 }
