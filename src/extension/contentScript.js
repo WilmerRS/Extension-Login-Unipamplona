@@ -8,6 +8,7 @@
  */
 mainFrame = window.frames[1];
 
+
 /**
  * Determina las claves y valores correspondientes a cada letra de la tabla.
  * @returns {*} dicc: Diccionario con las claves y valores.
@@ -53,7 +54,16 @@ function overwriteDocument(user, password) {
     mainFrame.document.getElementsByName("btnIngresar")[0].click();
 
     // Sirve para comprobar si se ha iniciado sesión correctamente
-    return mainFrame.document.getElementsByName("topFrame");
+    return successfullyLoggedIn();
+}
+
+/**
+ * Comprueba si se ha iniciado sesión correctamente
+ */
+function successfullyLoggedIn(){
+    var resultSession = document.getElementsByName("calendario")[0];
+    console.log('Class:ContentScript linea:65. Buscar en la pagina "calendario": ' + resultSession);
+    return resultSession != null || resultSession != undefined;
 }
 
 /**
@@ -63,22 +73,16 @@ function overwriteDocument(user, password) {
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         var decodedPassword = decode(request.password);
-        var resultSession = overwriteDocument(request.username, decodedPassword);
+        var successfullyLoggedIn = overwriteDocument(request.username, decodedPassword);
 
         // Si se ha iniciado sesión correctamente
-        if (resultSession != null || resultSession != undefined) {
+        if (successfullyLoggedIn) {
             sendResponse({
-                replication: "Done", 
-                username: request.username, 
-                password: request.password,
-                rememberCheck: request.rememberCheck
+                replication: "Done"
             });
         } else {
             sendResponse({
-                replication: "Error", 
-                username: request.username, 
-                password: request.password,
-                rememberCheck: request.rememberCheck
+                replication: "Error"
             }); 
         }
     }

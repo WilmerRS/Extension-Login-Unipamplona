@@ -5,7 +5,7 @@
   padding-left: 5px;
   padding-right: 5px;
   border-radius: 15px;
-  box-shadow: 2px 2px 10px var(--gris);
+  box-shadow: 2px 2px 30px -20px var(--gris);
 }
 
 div > .border-r {
@@ -20,7 +20,7 @@ div > .border-r {
   margin-left: 8px;
 }
 
-a > .colorBtnIcon {
+button > .colorBtnIcon {
   color: white;
 }
 
@@ -50,6 +50,8 @@ div > a {
 }
 
 .button {
+  padding: 0;
+  border: none;
   border-radius: 10px;
   height: 40px;
   background-color: var(--vinotinto);

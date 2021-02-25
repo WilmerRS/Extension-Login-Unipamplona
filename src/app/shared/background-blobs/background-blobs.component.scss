@@ -1,12 +1,11 @@
 // blob 1
 
 .blob-1 {
-  max-height: 90vh;
   width: 500px;
   z-index: 0;
   position: absolute;
-  margin: -160px;
-  transform: rotate(170deg);
+  margin: -180px;
+  transform: rotate(190deg);
 }
 
 .blob-1 path {
@@ -44,12 +43,11 @@
 
 // blob 2
 .blob-2 {
-    max-height: 90vh;
-    width: 700px;
+    width: 600px;
     z-index: 0;
     position: absolute;
-    margin-top: -200px;
-    margin-left: -50px;
+    margin-top: -340px;
+    margin-left: -10px;
   }
   
   .blob-2 path {
@@ -86,12 +84,12 @@
 
 //blob 3
 .blob-3 {
-    max-height: 90vh;
-    width: 350px;
+    width: 370px;
     z-index: 0;
     position: absolute;
-    margin-top: -50px;
+    margin-top: -57px;
     margin-left: 0px;
+    transform: rotate(70deg);
   }
   
   .blob-3 path {
@@ -128,7 +126,6 @@
 
   //blob 4
 .blob-4 {
-    max-height: 90vh;
     width: 250px;
     z-index: 0;
     position: absolute;
