@@ -1,7 +1,14 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { registerLocaleData } from '@angular/common';
+import localeEsCO from '@angular/common/locales/es';
+registerLocaleData(localeEsCO, 'es');
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,8 +38,9 @@ import { BackgroundBlobsComponent } from './shared/background-blobs/background-b
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [],
+  providers: [ { provide: LOCALE_ID, useValue: 'es' } ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

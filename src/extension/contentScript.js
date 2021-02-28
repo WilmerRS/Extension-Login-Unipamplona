@@ -1,5 +1,5 @@
 /**
- * El Script de contenido es un script que se ejecuta en el 
+ * El Script de contenido es un script que se ejecuta en el
  * contexto de la página web, en este caso el vortal unipamplona.
  */
 
@@ -8,20 +8,23 @@
  */
 mainFrame = window.frames[1];
 
-
 /**
  * Determina las claves y valores correspondientes a cada letra de la tabla.
  * @returns {*} dicc: Diccionario con las claves y valores.
  */
 function search() {
-    const itemsCount = 37;
-    var dicc = [];
-    for (var i = 0; i < itemsCount; i++) {
-        textInput = mainFrame.document.getElementsByClassName("fondo_celda_5 text_letras")[i].innerHTML;
-        numberImput = mainFrame.document.getElementsByClassName("fondo_celda_3 text_num")[i].innerHTML;
-        dicc[textInput] = numberImput;
-    }
-    return dicc;
+  const itemsCount = 37;
+  var dicc = [];
+  for (var i = 0; i < itemsCount; i++) {
+    textInput = mainFrame.document.getElementsByClassName(
+      "fondo_celda_5 text_letras"
+    )[i].innerHTML;
+    numberImput = mainFrame.document.getElementsByClassName(
+      "fondo_celda_3 text_num"
+    )[i].innerHTML;
+    dicc[textInput] = numberImput;
+  }
+  return dicc;
 }
 
 /**
@@ -30,15 +33,15 @@ function search() {
  * @return {*} decodedPassword Contraseña decodificada
  */
 function decode(password) {
-    var dicc = search();
-    var passwordSplit = password.split('');
-    var decodedPassword = [];
- 
-    for (var i=0; i < passwordSplit.length; i++) {
-        var nombre = passwordSplit[i].toUpperCase();
-        decodedPassword[i] = dicc[nombre];
-    }
-    return decodedPassword.join('');
+  var dicc = search();
+  var passwordSplit = password.split("");
+  var decodedPassword = [];
+
+  for (var i = 0; i < passwordSplit.length; i++) {
+    var nombre = passwordSplit[i].toUpperCase();
+    decodedPassword[i] = dicc[nombre];
+  }
+  return decodedPassword.join("");
 }
 
 /**
@@ -49,42 +52,42 @@ function decode(password) {
  * @param {*} password Contraseña del usuario
  */
 function overwriteDocument(user, password) {
-    mainFrame.document.getElementById("usuario").value = user;
-    mainFrame.document.getElementById("password").value = password;
-    mainFrame.document.getElementsByName("btnIngresar")[0].click();
+  mainFrame.document.getElementById("usuario").value = user;
+  mainFrame.document.getElementById("password").value = password;
+  mainFrame.document.getElementsByName("btnIngresar")[0].click();
 
-    // Sirve para comprobar si se ha iniciado sesión correctamente
-    return successfullyLoggedIn();
+  // Sirve para comprobar si se ha iniciado sesión correctamente
+  return successfullyLoggedInPage();
 }
 
 /**
  * Comprueba si se ha iniciado sesión correctamente
  */
-function successfullyLoggedIn(){
-    var resultSession = document.getElementsByName("calendario")[0];
-    console.log('Class:ContentScript linea:65. Buscar en la pagina "calendario": ' + resultSession);
-    return resultSession != null || resultSession != undefined;
+function successfullyLoggedInPage() {
+  console.log('"usuario": ' + mainFrame.document.getElementById("usuario"));
+  console.log('"usuario": ' + document.getElementById("usuario"));
+  return mainFrame.document.getElementById("usuario") == undefined;
 }
 
 /**
  * Oyente de mensajes enviados desde la extensión.
  * Inicia el tratamiento y inyección de los datos del usuario en la página.
  */
-chrome.runtime.onMessage.addListener(
-    function (request, sender, sendResponse) {
-        var decodedPassword = decode(request.password);
-        var successfullyLoggedIn = overwriteDocument(request.username, decodedPassword);
-
-        // Si se ha iniciado sesión correctamente
-        if (successfullyLoggedIn) {
-            sendResponse({
-                replication: "Done"
-            });
-        } else {
-            sendResponse({
-                replication: "Error"
-            }); 
-        }
-    }
-);
-
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  var decodedPassword = decode(request.password);
+  var successfullyLoggedIn = overwriteDocument(
+    request.username,
+    decodedPassword
+  );
+  console.log("Result " + successfullyLoggedIn);
+  // Si se ha iniciado sesión correctamente
+  if (successfullyLoggedIn) {
+    sendResponse({
+      replication: "Done",
+    });
+  } else {
+    sendResponse({
+      replication: "Error",
+    });
+  }
+});

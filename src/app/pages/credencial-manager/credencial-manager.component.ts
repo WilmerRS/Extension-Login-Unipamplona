@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserCreential } from 'src/app/interfaces/user-credential';
+import { CredentialsManagerService } from 'src/app/services/credentials-manager/credentials-manager.service';
 
 @Component({
   selector: 'app-credencial-manager',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CredencialManagerComponent implements OnInit {
 
-  constructor() { }
+  userCredentials: UserCreential[] = [];
+
+  constructor(private credentialsManagerService: CredentialsManagerService) { }
 
   ngOnInit(): void {
+    this.userCredentials = this.credentialsManagerService.getAll();
   }
 
 }

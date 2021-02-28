@@ -9,6 +9,8 @@ nav {
 
 .navbar {
   z-index: 10;
+  position: fixed;
+  bottom: 0;
   height: 78px;
   margin: 0px;
 }

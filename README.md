@@ -4,10 +4,10 @@
 Extensión para chrome que permite iniciar sesión en el vortal principal de la Universidad.
 
 ### Desarrolladores:
-<span>Wilmer Rodríguez Sánchez</span><br>
-<span>Estudíante de Ingeniería de sistemas </span><br>
-<span>Edward Florez</span><br>
-<span>Estudíante de Ingeniería de sistemas </span><br>
+Wilmer Rodríguez Sánchez<br>
+Estudíante de Ingeniería de sistemas <br>
+Edward Florez</span><br>
+Estudíante de Ingeniería de sistemas <br>
 <br>
 Universidad de Pamplona <br>
 2021

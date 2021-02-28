@@ -4,3 +4,12 @@
     z-index: 1;
     position: relative;
 }
+
+.screen {
+    
+}
+
+.background{
+    position: fixed;
+    top: 0;
+}

@@ -11,7 +11,6 @@ chrome.runtime.onInstalled.addListener(function () {
                     pageUrl: { 
                         hostEquals: 'vortal.unipamplona.edu.co'
                     },
-
                 })
             ],
             actions: [new chrome.declarativeContent.ShowPageAction()]

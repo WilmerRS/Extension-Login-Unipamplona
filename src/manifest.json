@@ -8,6 +8,7 @@
         "128" : "favicon.ico"
         },
     "permissions": [
+        "tabs",
         "activeTab",
         "contentSettings",
         "declarativeContent",
