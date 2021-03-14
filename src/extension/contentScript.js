@@ -7,6 +7,7 @@
  * Accede al Frame principal de la página
  */
 mainFrame = window.frames[1];
+console.log(mainFrame.name);
 
 /**
  * Determina las claves y valores correspondientes a cada letra de la tabla.
@@ -51,22 +52,41 @@ function decode(password) {
  * @param {*} user Nombre de usuario
  * @param {*} password Contraseña del usuario
  */
-function overwriteDocument(user, password) {
+async function overwriteDocument(user, password) {
   mainFrame.document.getElementById("usuario").value = user;
   mainFrame.document.getElementById("password").value = password;
   mainFrame.document.getElementsByName("btnIngresar")[0].click();
 
   // Sirve para comprobar si se ha iniciado sesión correctamente
-  return successfullyLoggedInPage();
+  // await window.frames.addEventListener('change', successfullyLoggedInPage);
+
+  // let l = new Promise((resolve, rejects) =>{});
+
+  return  successfullyLoggedInPage();
 }
 
 /**
  * Comprueba si se ha iniciado sesión correctamente
  */
 function successfullyLoggedInPage() {
-  console.log('"usuario": ' + mainFrame.document.getElementById("usuario"));
-  console.log('"usuario": ' + document.getElementById("usuario"));
-  return mainFrame.document.getElementById("usuario") == undefined;
+  console.log("length", mainFrame.length);
+  return mainFrame.length === 2;  
+}
+
+/**
+ * Obtiene una cookie a partir de su nombre
+ * @param {*} name
+ * @returns
+ */
+function getCookieItem(name) {
+  let nameEQ = name + "=";
+  let ca = mainFrame.document.cookie.split(";");
+  for (var i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === " ") c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
 }
 
 /**
@@ -75,11 +95,12 @@ function successfullyLoggedInPage() {
  */
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   var decodedPassword = decode(request.password);
-  var successfullyLoggedIn = overwriteDocument(
+  var successfullyLoggedIn =  overwriteDocument(
     request.username,
     decodedPassword
   );
-  console.log("Result " + successfullyLoggedIn);
+  console.log("successfullyLoggedIn", successfullyLoggedIn);
+
   // Si se ha iniciado sesión correctamente
   if (successfullyLoggedIn) {
     sendResponse({

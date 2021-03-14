@@ -1,15 +1,22 @@
 // blob 1
 
+
+.center {
+  display: flex;
+  align-items: center;
+}
+
 .blob-1 {
-  width: 500px;
+  width: 800px;
   z-index: 0;
   position: absolute;
-  margin: -180px;
-  transform: rotate(190deg);
+  margin-top: -400px;
+  margin-left: -230px;
+  transform: rotate(320deg);
 }
 
 .blob-1 path {
-  animation: blob-1 7s linear infinite;
+  animation: blob-1 13s linear infinite;
 }
 
 @keyframes blob-1 {
@@ -43,15 +50,16 @@
 
 // blob 2
 .blob-2 {
-    width: 600px;
+    width: 610px;
     z-index: 0;
     position: absolute;
     margin-top: -340px;
-    margin-left: -10px;
+    margin-left: -0px;
+    transform: rotate(280deg);
   }
   
   .blob-2 path {
-    animation: blob-2 8s linear infinite;
+    animation: blob-2 16s linear infinite;
   }
   
   @keyframes blob-2 {
@@ -126,11 +134,11 @@
 
   //blob 4
 .blob-4 {
-    width: 250px;
+    width: 300px;
     z-index: 0;
     position: absolute;
-    margin-top: -160px;
-    margin-left: -40px;
+    margin-top: -180px;
+    margin-left: -130px;
     transform: rotate(45deg);
   }
   

@@ -20,6 +20,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { CredencialManagerComponent } from './pages/credencial-manager/credencial-manager.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BackgroundBlobsComponent } from './shared/background-blobs/background-blobs.component';
+import { SocialBarComponent } from './shared/social-bar/social-bar/social-bar.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { BackgroundBlobsComponent } from './shared/background-blobs/background-b
     AboutUsComponent,
     CredencialManagerComponent,
     BackgroundBlobsComponent,
+    SocialBarComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,15 @@
+<!--<div class="">
+  <h1 class="title"><strong class="">¡Bienvenido a <span class="type-font">la extensión</span>!</strong></h1>
+</div>-->
+<div class="">
+  <div class="row ">
+    <div class="col s0 center-h"></div>
+    <h1 class="title col s6 "><strong class="">¡Bienvenido a <span class="type-font">ExUpa</span>!</strong></h1>
+    <img class="col s4" src="assets/favicon.png" alt="" width="60px">
+    <!--<i style="color: white; font-size: 3.1rem;" class="material-icons col s3">track_changes</i>-->
+  </div>
+</div>
+
 <div class="cardLogin">
   <main class="row mb-0">
     <form [formGroup]="userForm" class="" (ngSubmit)="onSubmit()">
@@ -41,7 +53,7 @@
         </div>
       </div>
 
-      <div class="row col s12 center-v pl-1">
+      <div class="row col s12 center-v pl-1 mb-0 ">
         <label class="center-v">
           <input
             class="filled-in"
@@ -56,7 +68,7 @@
         >
       </div>
 
-      <div class="row col s12 center-h mb-0">
+      <div class="row col s12 center-h mb-0 pb-1">
         <div class="buttonTab">
           <button
             id="btnDecode"
@@ -66,10 +78,14 @@
             <span for="btnDecode" class="p-1 font-btn">Iniciar sesión</span>
             <i class="size material-icons colorBtnIcon">keyboard_arrow_right</i>
           </button>
-          <div class="pt-1"></div>
           <span routerLinkActive="bar"> </span>
         </div>
       </div>
     </form>
   </main>
+  
+</div>
+
+<div>
+  <app-social-bar></app-social-bar>
 </div>

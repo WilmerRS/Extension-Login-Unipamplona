@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "./materialize-imports.scss";
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 :root {
   --vinotinto: rgb(151, 16, 16);
   --vinotinto-hover: rgb(196, 18, 18);
@@ -11,10 +11,11 @@
 
 html {
   width: 300px;
-  height: 510.47px;
-  max-height: 510.48px;
+  height: 600.47px;
+  max-height: 600.48px;
   margin: 0px;
   padding: 0px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 *::selection {
