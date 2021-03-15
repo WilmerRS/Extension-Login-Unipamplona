@@ -52,25 +52,40 @@ function decode(password) {
  * @param {*} user Nombre de usuario
  * @param {*} password Contraseña del usuario
  */
-async function overwriteDocument(user, password) {
+function overwriteDocument(user, password) {
   mainFrame.document.getElementById("usuario").value = user;
   mainFrame.document.getElementById("password").value = password;
   mainFrame.document.getElementsByName("btnIngresar")[0].click();
 
   // Sirve para comprobar si se ha iniciado sesión correctamente
-  // await window.frames.addEventListener('change', successfullyLoggedInPage);
+  mainFrame.document.addEventListener("change", () => console.log("change"));
+  mainFrame.document.addEventListener("DOMContentLoaded", () =>
+    console.log("Dom")
+  );
+  window.addEventListener("load", () => console.log("Windows"));
+  mainFrame.addEventListener("load", () => console.log("mf"));
+  mainFrame.document.addEventListener("load", () => console.log("mfd"));
+  mainFrame.document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      console.log("ready");
+    }
+  };
+  // setTimeout(successfullyLoggedInPage, 5000);
 
-  // let l = new Promise((resolve, rejects) =>{});
-
-  return  successfullyLoggedInPage();
+  return successfullyLoggedInPage();
 }
 
 /**
  * Comprueba si se ha iniciado sesión correctamente
  */
-function successfullyLoggedInPage() {
+async function successfullyLoggedInPage() {
+  console.log(
+    "Calendario ",
+    mainFrame.document.getElementsByName("calendario")[0]
+  );
+
   console.log("length", mainFrame.length);
-  return mainFrame.length === 2;  
+  return mainFrame.length === 2;
 }
 
 /**
@@ -93,15 +108,14 @@ function getCookieItem(name) {
  * Oyente de mensajes enviados desde la extensión.
  * Inicia el tratamiento y inyección de los datos del usuario en la página.
  */
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(async function (request, sender, sendResponse) {
   var decodedPassword = decode(request.password);
-  var successfullyLoggedIn =  overwriteDocument(
+  var successfullyLoggedIn = overwriteDocument(
     request.username,
     decodedPassword
   );
   console.log("successfullyLoggedIn", successfullyLoggedIn);
 
-  // Si se ha iniciado sesión correctamente
   if (successfullyLoggedIn) {
     sendResponse({
       replication: "Done",
@@ -112,3 +126,4 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     });
   }
 });
+

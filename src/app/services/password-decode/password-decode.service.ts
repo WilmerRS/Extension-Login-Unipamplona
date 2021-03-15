@@ -17,7 +17,8 @@ export class PasswordDecodeService {
    * @param userData Datos del usuario
    */
   decodePassword(userData: UserData): void {
-    this.inyectContentScript();
+    this.inyectContentScript('contentScript');
+    this.inyectContentScript('response');
     this.sendMessageToContentScript(userData);
   }
 
@@ -55,9 +56,9 @@ export class PasswordDecodeService {
   /**
    * Inyecta el script de contenido a la página
    */
-  inyectContentScript(): void {
+  inyectContentScript(script: string): void {
     chrome.tabs.executeScript({
-      file: 'extension/contentScript.js',
+      file: `extension/${script}.js`,
     });
   }
 
