@@ -1,8 +1,8 @@
+import { UserData } from 'src/app/interfaces/user-data';
 import { Injectable } from '@angular/core';
 import { UserCreential } from 'src/app/interfaces/user-credential';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -47,15 +47,25 @@ export class CredentialsManagerService {
     },
   ];
 
+  // biri = require('biri');
 
-  constructor(private firestore: AngularFirestore) {
-  }
+  constructor(private firestore: AngularFirestore) {}
 
   getAll(): UserCreential[] {
     return this.credentials;
   }
 
-  public getUsers() {
+  getUsers() {
     return this.firestore.collection('users').snapshotChanges();
+  }
+
+  savePassword(userData: UserData): any {
+    console.log('Hola desde el otro servicio, ', userData.username);
+  }
+
+  async createUser(userCredential: UserCreential): Promise<boolean> {
+    // const uniqueId = await biri(); // el ID devuelto será único por ordenador
+    // console.log(uniqueId);
+    return true;
   }
 }

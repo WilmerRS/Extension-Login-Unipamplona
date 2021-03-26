@@ -7,7 +7,7 @@
  * Accede al Frame principal de la página
  */
 mainFrame = window.frames[1];
-console.log(mainFrame.name);
+//console.log(mainFrame.name);
 
 /**
  * Determina las claves y valores correspondientes a cada letra de la tabla.
@@ -58,27 +58,27 @@ function overwriteDocument(user, password) {
   mainFrame.document.getElementsByName("btnIngresar")[0].click();
 
   // Sirve para comprobar si se ha iniciado sesión correctamente
-  mainFrame.document.addEventListener("change", () => console.log("change"));
-  mainFrame.document.addEventListener("DOMContentLoaded", () =>
-    console.log("Dom")
-  );
-  window.addEventListener("load", () => console.log("Windows"));
-  mainFrame.addEventListener("load", () => console.log("mf"));
-  mainFrame.document.addEventListener("load", () => console.log("mfd"));
-  mainFrame.document.onreadystatechange = function () {
-    if (document.readyState == "complete") {
-      console.log("ready");
-    }
-  };
+  // mainFrame.document.addEventListener("change", () => console.log("change"));
+  // mainFrame.document.addEventListener("DOMContentLoaded", () =>
+  //   console.log("Dom")
+  // );
+  // window.addEventListener("load", () => console.log("Windows"));
+  // mainFrame.addEventListener("load", () => console.log("mf"));
+  // mainFrame.document.addEventListener("load", () => console.log("mfd"));
+  // mainFrame.document.onreadystatechange = function () {
+  //   if (document.readyState == "complete") {
+  //     console.log("ready");
+  //   }
+  // };
   // setTimeout(successfullyLoggedInPage, 5000);
 
-  return successfullyLoggedInPage();
+  // return successfullyLoggedInPage();
 }
 
 /**
  * Comprueba si se ha iniciado sesión correctamente
  */
-async function successfullyLoggedInPage() {
+function successfullyLoggedInPage() {
   console.log(
     "Calendario ",
     mainFrame.document.getElementsByName("calendario")[0]
@@ -93,37 +93,57 @@ async function successfullyLoggedInPage() {
  * @param {*} name
  * @returns
  */
-function getCookieItem(name) {
-  let nameEQ = name + "=";
-  let ca = mainFrame.document.cookie.split(";");
-  for (var i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) === " ") c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
+// function getCookieItem(name) {
+//   let nameEQ = name + "=";
+//   let ca = mainFrame.document.cookie.split(";");
+//   for (var i = 0; i < ca.length; i++) {
+//     let c = ca[i];
+//     while (c.charAt(0) === " ") c = c.substring(1, c.length);
+//     if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+//   }
+//   return null;
+// }
 
 /**
  * Oyente de mensajes enviados desde la extensión.
  * Inicia el tratamiento y inyección de los datos del usuario en la página.
  */
-chrome.runtime.onMessage.addListener(async function (request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   var decodedPassword = decode(request.password);
-  var successfullyLoggedIn = overwriteDocument(
-    request.username,
-    decodedPassword
-  );
-  console.log("successfullyLoggedIn", successfullyLoggedIn);
+  // var successfullyLoggedIn = overwriteDocument(
+  //   request.username,
+  //   decodedPassword
+  // );
+  overwriteDocument(request.username, decodedPassword);
 
-  if (successfullyLoggedIn) {
-    sendResponse({
-      replication: "Done",
-    });
-  } else {
-    sendResponse({
-      replication: "Error",
-    });
-  }
+  // console.log("successfullyLoggedIn", successfullyLoggedIn);
+  send = sendResponse;
+  // if (successfullyLoggedIn) {
+  //   sendResponse({
+  //     replication: "Done",
+  //   });
+  // } else {
+  //   sendResponse({
+  //     replication: "Error",
+  //   });
+  // }
+  // await f1();
+  return true;
 });
 
+// async function f1(){
+//   mainFrame.frameElement.addEventListener("load", loadedMainFrame);
+// }
+
+// function loadedMainFrame() {
+//   console.log('Respues ta de cos' ,mainFrame.length === 2)
+//   if (mainFrame.length === 2) {
+//     send({
+//       replication: "Done",
+//     });
+//   } else {
+//     send({
+//       replication: "Error",
+//     });
+//   }
+// }
