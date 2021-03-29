@@ -1,0 +1,57 @@
+.cardLogin {
+  background-color: white;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 30px -20px var(--gris);
+}
+
+.center-h {
+  display: flex;
+  justify-content: center;
+}
+
+.center-f {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cardLogin2 {
+  background-color: rgb(228, 228, 228);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 30px -20px var(--gris);
+}
+
+.centrar {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centrar2 {
+  font-size: 20px;
+  color: rgb(61 59 59);
+  display: flex;
+  justify-content: center;
+  box-shadow: 2px 2px 30px -20px var(--gris);
+}
+
+.carousel.carousel-slider .carousel-item {
+  min-height: 50px;
+  height: 150px;
+  width: 100%;
+}
+
+.carousel .indicators .indicator-item {
+  background-color: rgb(151, 16, 16) !important;
+}
+.carousel .indicators .indicator-item {
+  background-color: rgb(21, 151, 16) !important;
+}

@@ -61,11 +61,11 @@ export class CredentialsManagerService {
 
   savePassword(userData: UserData): any {
     console.log('Hola desde el otro servicio, ', userData.username);
+
   }
 
-  async createUser(userCredential: UserCreential): Promise<boolean> {
+  createUser(userCredential: UserCreential) {
     // const uniqueId = await biri(); // el ID devuelto será único por ordenador
     // console.log(uniqueId);
-    return true;
   }
 }
