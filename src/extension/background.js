@@ -10,7 +10,7 @@ chrome.runtime.onInstalled.addListener(function () {
         conditions: [
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: {
-              hostEquals: "vortal.unipamplona.edu.co",
+              hostEquals: "hermesoft.unipamplona.edu.co",
             },
           }),
         ],

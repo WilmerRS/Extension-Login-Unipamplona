@@ -7,6 +7,7 @@
   --vinotinto-hover: rgb(196, 18, 18);
   --gris: rgb(0, 0, 0);
   --gris-oscuro: rgb(61, 59, 59);
+  --gris-claro: rgb(184, 184, 184);
 }
 
 html {
@@ -22,7 +23,7 @@ html {
     background-color: #e1cfcf;
     color: #681111;
 }
- 
+
 *::-moz-selection {
     background-color:#E1D8CF;
     color: #681111;

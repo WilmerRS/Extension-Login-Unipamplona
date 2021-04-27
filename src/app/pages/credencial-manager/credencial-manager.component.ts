@@ -10,12 +10,10 @@ import { CredentialsManagerService } from 'src/app/services/credentials-manager/
 export class CredencialManagerComponent implements OnInit {
   userCredentials: UserCreential[] = [];
 
-  constructor(
-    private credentialsManagerService: CredentialsManagerService
-  ) {}
+  constructor(private credentialsManagerService: CredentialsManagerService) {}
 
   ngOnInit(): void {
-    this.credentialsManagerService.getUsers().subscribe((usersSnapshot) => {
+    /*  this.credentialsManagerService.getUsers().subscribe((usersSnapshot) => {
       this.userCredentials = [];
       usersSnapshot.forEach((userCredentials: any) => {
         console.log(userCredentials.payload.doc.data());
@@ -27,7 +25,14 @@ export class CredencialManagerComponent implements OnInit {
           defaultUser: userCredentials.payload.doc.data().defaulUser
         });
       });
-    });
-    // this.userCredentials = this.credentialsManagerService.getAll();
+    }); */
+    this.userCredentials = this.credentialsManagerService.getUsers();
   }
+
+ /*  deleteUser(event: any, user: {}): void {
+    event.preventDefault();
+
+    /*     let string: Promise<string> = Object.values(user)[0];
+    this.credentialsManagerService.deleteUser(user, 'Wilmer');
+  } */
 }

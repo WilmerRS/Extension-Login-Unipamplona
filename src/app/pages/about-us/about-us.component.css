@@ -43,15 +43,3 @@
   box-shadow: 2px 2px 30px -20px var(--gris);
 }
 
-.carousel.carousel-slider .carousel-item {
-  min-height: 50px;
-  height: 150px;
-  width: 100%;
-}
-
-.carousel .indicators .indicator-item {
-  background-color: rgb(151, 16, 16) !important;
-}
-.carousel .indicators .indicator-item {
-  background-color: rgb(21, 151, 16) !important;
-}

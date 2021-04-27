@@ -21,6 +21,7 @@
       <div class="row mb-0">
         <div class="input-field col s12">
           <input
+            #username
             id="username"
             type="text"
             class="validate border-r"
@@ -41,7 +42,7 @@
             autocomplete="current-password"
             formControlName="password"
           />
-          <label for="password">Contraseña</label>
+          <label id="pass" for="password">Contraseña</label>
           <span class="field-icon toggle-password"
             ><span
               (click)="showHidePassword(password, spanIcon)"
@@ -83,7 +84,7 @@
       </div>
     </form>
   </main>
-  
+
 </div>
 
 <div>

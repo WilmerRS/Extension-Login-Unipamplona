@@ -2,14 +2,14 @@
   <div class="" *ngFor="let user of userCredentials">
     <div class="row cardUser">
       <div>
-        <img class="col s2" src="favicon.ico" alt="icon" />
-        <div class="col s9">
+        <img class="col s2" src="../../../assets/user.svg" alt="icon" />
+        <div class="col s8">
           <span class="row mb-0">Hola {{ user.username }}</span>
-          <span class="row mb-0">Fecha: {{ user.date | date:'mediumDate'  }}</span>  
+          <span class="row mb-0">Fecha: {{ user.date | date:'mediumDate'  }}</span>
         </div>
-        <div class="col s1 center-h center-v">
-          <a href="" id="delete" type="button">
-            <i class="material-icons delete-icon">delete</i>
+        <div class="col s2 center-h center-v">
+          <a  href="" id="delete" type="button">
+            <i class="material-icons delete-icon padding">delete</i>
           </a>
         </div>
       </div>
