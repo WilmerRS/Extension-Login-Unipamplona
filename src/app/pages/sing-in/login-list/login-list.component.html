@@ -6,11 +6,10 @@
   </div>
   <div class="row mb-0">
     <div class="input-field col s12">
-      <select class="custom-select" (change)="handleCredential($event)" formControlName="cityName">
+      <select class="custom-select" (change)="handleCredential($event)" formControlName="credentials">
         <option value="">Choose your city</option>
         <option *ngFor="let cdt of userCreential" [ngValue]="cdt">{{cdt}}</option>
       </select>
-
       <!-- error block -->
       <div class="invalid-feedback" *ngIf="isSubmitted">
         <sup>*</sup>Please enter your city name

@@ -5,12 +5,11 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-login-inputs',
   templateUrl: './login-inputs.component.html',
-  styleUrls: ['../sing-in.component.css']
+  styleUrls: ['../sing-in.component.css'],
 })
 export class LoginInputsComponent implements OnInit {
-
-  @ViewChild('username') usernameElement: ElementRef | undefined;
-  @ViewChild('password') passwordElement: ElementRef | undefined;
+  /* @ViewChild('username') usernameElement: ElementRef | undefined;
+  @ViewChild('password') passwordElement: ElementRef | undefined; */
 
   // Datos del formulario
   userForm = this.formBuilder.group({
@@ -25,16 +24,42 @@ export class LoginInputsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userForm.setValue({ ...this.userForm.value, username: 'hola', password: 'a' });
+    this.userForm.setValue({
+      ...this.userForm.value,
+      username: 'hola',
+      password: 'a',
+    });
     // this.passwordElement?.nativeElement.focus();
     // this.usernameElement?.nativeElement.focus();
   }
-
+  /*
   ngAfterViewInit(): void {
     // this.userForm.setValue({ ...this.userForm.value, username: 'hola', password: 'a' });
     this.passwordElement?.nativeElement.focus();
     // this.usernameElement?.nativeElement.focus();
   }
+
+  ngAfterViewInit(): void {
+    this.focusInput();
+    this.getCredentials();
+    this.cdRef.detectChanges();
+  }
+ */
+  /* getCredentials(): void {
+    const credentials2 = this.credentials.getLastUser();
+    this.userForm.setValue({
+      ...this.userForm.value,
+      username: credentials2.username,
+      password: credentials2.password,
+    });
+  } */
+
+  /* focusInput(): void {
+    this.renderer.selectRootElement(this.inputPassword.nativeElement).focus();
+    setTimeout(() => {
+      this.renderer.selectRootElement(this.inputUsername.nativeElement).focus();
+    }, 100);
+  } */
 
   /**
    * Permite mostrar u ocultar la contraseña dentro del input.
