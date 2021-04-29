@@ -54,10 +54,10 @@ export class CredencialManagerComponent implements OnInit {
       element.nativeElement.addEventListener('mousemove', () => {
         console.log('encima');
       });
-    }) */ console.log(
+    })  console.log(
       event.target
     );
-    /* this.cardUserEvent(); */
+     this.cardUserEvent(); */
   }
 
   /* Add event mousemove to cardUser */

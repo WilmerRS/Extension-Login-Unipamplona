@@ -4,7 +4,6 @@ import { PasswordDecodeService } from './../../../services/password-decode/passw
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
-import M from 'materialize-css';
 
 @Component({
   selector: 'app-login-list',

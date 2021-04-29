@@ -12,22 +12,18 @@ div > a {
   width: 80px;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
 
 a > .activo {
   color: var(--vinotinto);
 }
 
-.pt-1{
-  padding-top: 10px;
-}
-
 .bar {
   width: 80px;
   position: absolute;
   height: 4px;
-  background-color:var(--vinotinto);
+  background-color: var(--vinotinto);
   margin-bottom: -16px;
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
@@ -36,4 +32,8 @@ a > .activo {
 .buttonTab {
   outline: none;
   border: 0;
+}
+
+.button:hover {
+  color : #7c0000 !important;
 }

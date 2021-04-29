@@ -1,7 +1,6 @@
 import { UserCreential } from './../../interfaces/user-credential';
 import { UserData } from './../../interfaces/user-data';
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -51,7 +50,7 @@ export class CredentialsManagerService {
 
   // biri = require('biri');
 
-  constructor(private firestore: AngularFirestore) {
+  constructor() {
     this.users = this.getUsers();
   }
 
