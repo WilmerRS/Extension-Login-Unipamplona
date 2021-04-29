@@ -1,38 +1,38 @@
+import { SingInComponent } from './pages/sing-in/home/sing-in.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { CredencialManagerComponent } from './pages/credencial-manager/credencial-manager.component';
-import { SingInComponent } from './pages/sing-in/sing-in.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: LayoutComponent,
     children: [
       {
         path: '',
         redirectTo: '/home',
-         pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'home',
-        component: SingInComponent
+        component: SingInComponent,
       },
       {
         path: 'settings',
-        component: CredencialManagerComponent
+        component: CredencialManagerComponent,
       },
       {
         path: 'about-us',
-        component: AboutUsComponent
-      }
-    ]
-  }
+        component: AboutUsComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

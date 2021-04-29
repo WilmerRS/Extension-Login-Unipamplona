@@ -1,0 +1,58 @@
+<form [formGroup]="credentialForm" class="" (ngSubmit)="onSubmit()">
+  <div class="row mb-0 col s12 center-h">
+    <h5>
+      <strong>Iniciar sesión</strong>
+    </h5>
+  </div>
+  <div class="row mb-0">
+    <div class="input-field col s12">
+      <select class="custom-select" (change)="handleCredential($event)" formControlName="cityName">
+        <option value="">Choose your city</option>
+        <option *ngFor="let cdt of userCreential" [ngValue]="cdt">{{cdt}}</option>
+      </select>
+
+      <!-- error block -->
+      <div class="invalid-feedback" *ngIf="isSubmitted">
+        <sup>*</sup>Please enter your city name
+      </div>
+      <label for="username">Nombre de usuario</label>
+    </div>
+  </div>
+<!--
+  <div class="input-field col s12">
+    <select>
+      <optgroup label="team 1">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+      </optgroup>
+      <optgroup label="team 2">
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+      </optgroup>
+    </select>
+    <label>Optgroups</label>
+  </div> -->
+
+  <div class="row col s12 center-h mb-0 pb-1">
+    <div class="buttonTab">
+      <button
+        id="btnDecode"
+        class="waves-effect waves-light button center-v center-h mt-1"
+        type="submit"
+      >
+        <span for="btnDecode" class="p-1 font-btn">Iniciar sesión</span>
+        <i class="size material-icons colorBtnIcon">keyboard_arrow_right</i>
+      </button>
+      <span routerLinkActive="bar"> </span>
+    </div>
+  </div>
+</form>
+
+
+<a
+  class="btn btn-primary waves-effect waves-dark button"
+  href=""
+  (click)="this.handleRedirectTO($event)"
+>
+  Hola
+</a>

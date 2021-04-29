@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { UserCreential } from 'src/app/interfaces/user-credential';
 import { AngularFirestore } from '@angular/fire/firestore';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -49,22 +48,21 @@ export class CredentialsManagerService {
 
   // biri = require('biri');
 
-  constructor(private firestore: AngularFirestore) {}
+  constructor() {}
 
   getAll(): UserCreential[] {
     return this.credentials;
   }
 
-  getUsers() {
-    return this.firestore.collection('users').snapshotChanges();
+  getUsers(): void {
+    // return this.firestore.collection('users').snapshotChanges();
   }
 
   savePassword(userData: UserData): any {
     console.log('Hola desde el otro servicio, ', userData.username);
-
   }
 
-  createUser(userCredential: UserCreential) {
+  createUser(userCredential: UserCreential): void {
     // const uniqueId = await biri(); // el ID devuelto será único por ordenador
     // console.log(uniqueId);
   }

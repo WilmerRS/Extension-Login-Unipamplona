@@ -22,3 +22,11 @@
 .mt-1 {
   margin-top: 12px;
 }
+
+.color-base {
+  color: var(--gris);
+}
+
+.color-base:hover {
+  color: var(--vinotinto);
+}

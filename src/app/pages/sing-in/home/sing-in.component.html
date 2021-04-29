@@ -1,0 +1,45 @@
+<!--<div class="">
+  <h1 class="title"><strong class="">¡Bienvenido a <span class="type-font">la extensión</span>!</strong></h1>
+</div>-->
+<div class="">
+  <div class="row">
+    <div class="col s0 center-h"></div>
+    <h1 class="title col s6">
+      <strong class=""
+        >¡Bienvenido a <span class="type-font">ExUpa</span>!</strong
+      >
+    </h1>
+    <img class="col s4" src="assets/favicon.png" alt="" width="60px" />
+    <!--<i style="color: white; font-size: 3.1rem;" class="material-icons col s3">track_changes</i>-->
+  </div>
+</div>
+
+<div class="cardLogin">
+  <main class="row mb-0">
+    <!-- Login List -->
+    <ng-template [ngIf]=" this.currentState === this.routes.loginList">
+      <div>
+        <app-login-list
+          [route]="this.routes.loginInputs"
+          (redirectTo)="redirectTo($event)"
+        ></app-login-list>
+      </div>
+    </ng-template>
+    <!-- Login inputs -->
+    <ng-template [ngIf]="this.currentState === this.routes.loginInputs">
+      <div>
+        <app-login-inputs></app-login-inputs>
+      </div>
+    </ng-template>
+    <!-- Shared -->
+    <ng-template [ngIf]="this.currentState === this.routes.shared">
+      <div>
+        <app-shared></app-shared>
+      </div>
+    </ng-template>
+  </main>
+</div>
+
+<div>
+  <app-social-bar></app-social-bar>
+</div>

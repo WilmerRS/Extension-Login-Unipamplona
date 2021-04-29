@@ -21,8 +21,8 @@ export class PasswordDecodeService {
    */
   public decodePassword(userData: UserData): void {
     this.userData = userData;
-    this.inyectContentScript('contentScript');
-    this.inyectContentScript('response');
+    this.inyectContentScript('ContentScript');
+    this.inyectContentScript('Response');
     this.sendMessageToContentScript();
     this.listenerLoggedIn();
   }

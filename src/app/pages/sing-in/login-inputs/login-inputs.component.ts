@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { PasswordDecodeService } from './../../../services/password-decode/password-decode.service';
 import { FormBuilder } from '@angular/forms';
-import { PasswordDecodeService } from 'src/app/services/password-decode/password-decode.service';
-
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-sing-in',
-  templateUrl: './sing-in.component.html',
-  styleUrls: ['./sing-in.component.css'],
+  selector: 'app-login-inputs',
+  templateUrl: './login-inputs.component.html',
+  styleUrls: ['../sing-in.component.css']
 })
-export class SingInComponent implements OnInit {
+export class LoginInputsComponent implements OnInit {
+
+  @ViewChild('username') usernameElement: ElementRef | undefined;
+  @ViewChild('password') passwordElement: ElementRef | undefined;
+
   // Datos del formulario
   userForm = this.formBuilder.group({
     username: [''],
@@ -21,7 +24,17 @@ export class SingInComponent implements OnInit {
     private passwordDecodeService: PasswordDecodeService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userForm.setValue({ ...this.userForm.value, username: 'hola', password: 'a' });
+    // this.passwordElement?.nativeElement.focus();
+    // this.usernameElement?.nativeElement.focus();
+  }
+
+  ngAfterViewInit(): void {
+    // this.userForm.setValue({ ...this.userForm.value, username: 'hola', password: 'a' });
+    this.passwordElement?.nativeElement.focus();
+    // this.usernameElement?.nativeElement.focus();
+  }
 
   /**
    * Permite mostrar u ocultar la contraseña dentro del input.

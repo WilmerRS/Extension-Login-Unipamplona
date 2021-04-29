@@ -14,9 +14,15 @@
         "declarativeContent",
         "storage"
     ],
+    "content_scripts": [
+      {
+        "matches": ["http://www.unipamplona.edu.co/"],
+        "js": ["extension/Content.js"]
+      }
+    ],
     "background": {
         "scripts": [
-            "extension/background.js"
+            "extension/Background.js"
         ],
         "persistent": false
     },
