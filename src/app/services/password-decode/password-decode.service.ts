@@ -71,12 +71,14 @@ export class PasswordDecodeService {
       (request: any, sender: any, sendResponse: any) => {
         // console.log('Response del reques', request.loggedIn);
         if (this.userData.checkRemember && request.loggedIn) {
-          this.credencialMng.savePassword(this.userData);
+          this.credencialMng.addUser(this.userData);
         }
         return true;
       }
     );
   }
+
+  
 
   // done(userData: UserData): void{
   //   this.result = true;

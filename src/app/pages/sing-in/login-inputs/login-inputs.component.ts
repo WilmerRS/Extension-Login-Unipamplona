@@ -1,17 +1,40 @@
+<<<<<<< HEAD:src/app/pages/sing-in/login-inputs/login-inputs.component.ts
 import { PasswordDecodeService } from './../../../services/password-decode/password-decode.service';
 import { FormBuilder } from '@angular/forms';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+=======
+import { CredentialsManagerService } from 'src/app/services/credentials-manager/credentials-manager.service';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  AfterViewInit,
+  Renderer2,
+  ElementRef,
+  ChangeDetectorRef,
+} from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { PasswordDecodeService } from 'src/app/services/password-decode/password-decode.service';
+>>>>>>> 9fb9291d1019b6d355702f6ad6c55ed3282c57c1:src/app/pages/sing-in/sing-in.component.ts
 
 @Component({
   selector: 'app-login-inputs',
   templateUrl: './login-inputs.component.html',
   styleUrls: ['../sing-in.component.css']
 })
+<<<<<<< HEAD:src/app/pages/sing-in/login-inputs/login-inputs.component.ts
 export class LoginInputsComponent implements OnInit {
 
   @ViewChild('username') usernameElement: ElementRef | undefined;
   @ViewChild('password') passwordElement: ElementRef | undefined;
 
+=======
+export class SingInComponent implements OnInit, AfterViewInit {
+  // VARIABLES
+  Myinterval: any;
+  @ViewChild('username') inputUsername!: ElementRef;
+  @ViewChild('password') inputPassword!: ElementRef;
+>>>>>>> 9fb9291d1019b6d355702f6ad6c55ed3282c57c1:src/app/pages/sing-in/sing-in.component.ts
   // Datos del formulario
   userForm = this.formBuilder.group({
     username: [''],
@@ -21,7 +44,10 @@ export class LoginInputsComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private passwordDecodeService: PasswordDecodeService
+    private passwordDecodeService: PasswordDecodeService,
+    private renderer: Renderer2,
+    private cdRef: ChangeDetectorRef,
+    private credentials: CredentialsManagerService
   ) {}
 
   ngOnInit(): void {
@@ -34,6 +60,28 @@ export class LoginInputsComponent implements OnInit {
     // this.userForm.setValue({ ...this.userForm.value, username: 'hola', password: 'a' });
     this.passwordElement?.nativeElement.focus();
     // this.usernameElement?.nativeElement.focus();
+  }
+
+  ngAfterViewInit(): void {
+    this.focusInput();
+    this.getCredentials();
+    this.cdRef.detectChanges();
+  }
+
+  getCredentials(): void {
+    const credentials2 = this.credentials.getLastUser();
+    this.userForm.setValue({
+      ...this.userForm.value,
+      username: credentials2.username,
+      password: credentials2.password,
+    });
+  }
+
+  focusInput(): void {
+    this.renderer.selectRootElement(this.inputPassword.nativeElement).focus();
+    setTimeout(() => {
+      this.renderer.selectRootElement(this.inputUsername.nativeElement).focus();
+    }, 100);
   }
 
   /**
