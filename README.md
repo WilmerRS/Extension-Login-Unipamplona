@@ -5,8 +5,8 @@ Extension for chrome that allows you to log into the main University vortal.
 
 ## 🐈 Branches content
 
-   1. [Master](https://github.com/WilmerRS/Learn-jsp-spring-bd21-1/tree/master): Vanilla code of the extension for Chrome, without the use of web frameworks.
-   2. [Credentials](https://github.com/WilmerRS/Learn-jsp-spring-bd21-1/tree/Credentials): Chrome extension code, using Angular 11.
+   1. [Master](https://github.com/WilmerRS/Extension-Login-Unipamplona/tree/master): Vanilla code of the extension for Chrome, without the use of web frameworks.
+   2. [Credentials](https://github.com/WilmerRS/Extension-Login-Unipamplona/tree/Credentials): Chrome extension code, using Angular 11.
 
 ## 🐙 To get started
 
