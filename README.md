@@ -1,13 +1,21 @@
-# Login Extension
-## Universidad de Pamplona
 
-Extensión para chrome que permite iniciar sesión en el vortal principal de la Universidad.
+<h1 align="center"> 🐣<strong> Login Extension </strong>🐯 </h1>
 
-### Desarrolladores:
-Wilmer Rodríguez Sánchez<br>
-Estudíante de Ingeniería de sistemas <br>
-Edward Florez</span><br>
-Estudíante de Ingeniería de sistemas <br>
-<br>
-Universidad de Pamplona <br>
-2021
+Extension for chrome that allows you to log into the main University vortal.
+
+## 🐈 Branches content
+
+   1. [Master](https://github.com/WilmerRS/Learn-jsp-spring-bd21-1/tree/master): Vanilla code of the extension for Chrome, without the use of web frameworks.
+   2. [Credentials](https://github.com/WilmerRS/Learn-jsp-spring-bd21-1/tree/Credentials): Chrome extension code, using Angular 11.
+
+## 🐙 To get started
+
+1. Clone this repository: `git clone https://github.com/WilmerRS/Extension-Login-Unipamplona`.
+2. Install dependencies: `npm install`.
+
+## 🖋️ Authors
+
+The developers have contributed to this project:
+
+* Wilmer Rodríguez Sánchez - <a href="https://github.com/WilmerRS"> WilmerRS </a>
+* Edward Florez
