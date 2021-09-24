@@ -5,7 +5,7 @@ Extension for chrome that allows you to log into the main University vortal.
 
 ## 🐈 Branches content
 
-   1. [vanilla-version](https://github.com/WilmerRS/Extension-Login-Unipamplona/tree/vanilla-version): Vanilla code of the extension for Chrome, without the use of web frameworks.
+   1. [vanilla_version](https://github.com/WilmerRS/Extension-Login-Unipamplona/tree/vanilla_version): Vanilla code of the extension for Chrome, without the use of web frameworks.
 
 ## 🐙 To get started
 
