@@ -12,6 +12,19 @@ Extension for chrome that allows you to log into the main University vortal.
 
 1. Clone this repository: `git clone https://github.com/WilmerRS/Extension-Login-Unipamplona`.
 2. Install dependencies: `npm install`.
+3. Build app with `ng build`.
+4. Load dist to Chrome extensions.
+
+## 📷 Screenshots
+### 🦀 Frame
+<div align="center">
+  <img src="https://raw.githubusercontent.com/WilmerRS/Extension-Login-Unipamplona/vanilla_version/res/Extension_login-frame.png" width="400"/>
+</div>
+
+### 🐞 Complete window
+<div align="center">
+  <img src="https://raw.githubusercontent.com/WilmerRS/Extension-Login-Unipamplona/vanilla_version/res/Extension_login-complete.png" width="1000"/>
+</div>
 
 ## 🖋️ Authors
 
