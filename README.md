@@ -1,12 +1,11 @@
 
 <h1 align="center"> 🐣<strong> Login Extension UP </strong>🐯 </h1>
 
-Extension for chrome that allows you to log into the main University vortal.
+Extension for chrome that allows you to log into the main University vortal. 
 
 ## 🐈 Branches content
 
-   1. [Master](https://github.com/WilmerRS/Extension-Login-Unipamplona/tree/master): Vanilla code of the extension for Chrome, without the use of web frameworks.
-   2. [Credentials](https://github.com/WilmerRS/Extension-Login-Unipamplona/tree/Credentials): Chrome extension code, using Angular 11.
+   1. [vanilla-version](https://github.com/WilmerRS/Extension-Login-Unipamplona/tree/vanilla-version): Vanilla code of the extension for Chrome, without the use of web frameworks.
 
 ## 🐙 To get started
 
