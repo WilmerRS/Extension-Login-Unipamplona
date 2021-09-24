@@ -1,5 +1,5 @@
 
-<h1 align="center"> 🐣<strong> Login Extension </strong>🐯 </h1>
+<h1 align="center"> 🐣<strong> Login Extension UP </strong>🐯 </h1>
 
 Extension for chrome that allows you to log into the main University vortal.
 
@@ -12,6 +12,17 @@ Extension for chrome that allows you to log into the main University vortal.
 
 1. Clone this repository: `git clone https://github.com/WilmerRS/Extension-Login-Unipamplona`.
 2. Install dependencies: `npm install`.
+
+## 📷 Screenshots
+### 🦀 Frame
+<div align="center">
+  <img src="https://github.com/WilmerRS/Extension-Login-Unipamplona/blob/main/public/creach%20screenshots/home.png" width="1000"/>
+</div>
+
+### 🦀 Complete window
+<div align="center">
+  <img src="https://github.com/WilmerRS/Extension-Login-Unipamplona/blob/main/public/creach%20screenshots/home.png" width="1000"/>
+</div>
 
 ## 🖋️ Authors
 
