@@ -46,3 +46,18 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# vim
+.~
+/~
+
+# python
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# compress
+*.zip
+*.rar
