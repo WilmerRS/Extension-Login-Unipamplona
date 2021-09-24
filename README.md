@@ -15,12 +15,12 @@ Extension for chrome that allows you to log into the main University vortal.
 ## 📷 Screenshots
 ### 🦀 Frame
 <div align="center">
-  <img src="https://raw.githubusercontent.com/WilmerRS/Extension-Login-Unipamplona/master/res/Extension_login-frame.png" width="400"/>
+  <img src="https://raw.githubusercontent.com/WilmerRS/Extension-Login-Unipamplona/vanilla_version/res/Extension_login-frame.png" width="400"/>
 </div>
 
 ### 🐞 Complete window
 <div align="center">
-  <img src="https://raw.githubusercontent.com/WilmerRS/Extension-Login-Unipamplona/master/res/Extension_login-complete.png" width="1000"/>
+  <img src="https://raw.githubusercontent.com/WilmerRS/Extension-Login-Unipamplona/vanilla_version/res/Extension_login-complete.png" width="1000"/>
 </div>
 
 ## 🖋️ Authors
