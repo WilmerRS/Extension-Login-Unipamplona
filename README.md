@@ -31,4 +31,4 @@ Extension for chrome that allows you to log into the main University vortal.
 The developers have contributed to this project:
 
 * Wilmer Rodríguez Sánchez - <a href="https://github.com/WilmerRS"> WilmerRS </a>
-* Edward Florez
+* Edward Florez - <a href="https://github.com/EdwaardFlorez"> EdwaardFlorez </a>
