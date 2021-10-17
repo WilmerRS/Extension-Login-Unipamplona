@@ -4,14 +4,14 @@
 .cardLogin {
   background-color: white;
   padding-top: 2px;
-  padding-bottom: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 15px;
   box-shadow: 2px 2px 30px -20px var(--gris);
 }
 
-div > .border-r {
+div>.border-r {
   border-radius: 5px;
 }
 
@@ -23,14 +23,15 @@ div > .border-r {
   margin-left: 8px;
 }
 
-button > .colorBtnIcon {
+button>.colorBtnIcon {
   color: white;
 }
 
-a > .colorInfo {
+a>.colorInfo {
   color: var(--gris-oscuro);
 }
-a > .colorInfo:hover {
+
+a>.colorInfo:hover {
   color: var(--vinotinto);
 }
 
@@ -38,7 +39,7 @@ a > .colorInfo:hover {
   font-size: 2.5rem;
 }
 
-div > a {
+div>a {
   padding: 0px;
 }
 
@@ -63,7 +64,8 @@ div > a {
 .p-1 {
   padding-left: 13px;
 }
-div > .pb-1{
+
+div>.pb-1 {
   padding-bottom: 3px;
 }
 
@@ -71,7 +73,7 @@ div > .pb-1{
   padding-left: 14px;
 }
 
-label > .pl-2 {
+label>.pl-2 {
   padding-left: 27px;
 }
 
@@ -118,7 +120,7 @@ span.field-icon {
 .eye-icon {
   font-size: 1.3rem;
   padding-right: 10px;
-  padding-top:3px;
+  padding-top: 3px;
   color: var(--gris-oscuro);
 }
 
@@ -135,7 +137,11 @@ span.field-icon {
   font-family: 'Quicksand', sans-serif;
   /*font-family: 'Merienda', cursive;*/
 
- margin: 0px;
+  margin: 0px;
+}
+
+.no-visible{
+  visibility: hidden !important;
 }
 
 .type-font {
@@ -158,4 +164,180 @@ span.field-icon {
   padding-bottom: 15px;
 }
 
+.pt-2 {
+  padding-top: 0.5rem;
 
+}
+.pb-3{
+  padding-bottom: 0.7rem;
+
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+
+}
+
+label {
+  font-size: 1rem;
+
+}
+
+.link {
+  font-size: 1rem;
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+
+.link:hover {
+  color: var(--vinotinto);
+  border-bottom: 1px solid var(--vinotinto);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Select */
+
+input.input-select {
+  background-color: #fff;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid rgba(108, 108, 108, 0.407);
+  padding: 1rem;
+}
+
+input.input-select:hover {
+  background-color: rgb(245, 245, 245);
+  border-radius: 10px;
+
+}
+
+input.noselect,
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+.css-select,
+.css-select *,
+.css-select *::before,
+.css-select *::after {
+  box-sizing: border-box;
+}
+
+.css-select {
+  position: relative;
+}
+
+.css-select:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: calc(54% - 0.5rem);
+  right: 0.75rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 0 solid rgb(0, 0, 0);
+  border-width: 0 0.125rem 0.125rem 0;
+  transform: rotate(45deg);
+  transition: top 0.3s ease, transform 0.3s ease;
+
+  pointer-events: none;
+}
+
+.css-select:focus-within:after {
+  top: calc(50% - 0.25rem);
+  transform: rotate(225deg);
+}
+
+.css-select__selected {
+  display: block;
+  margin: 0;
+  padding: 0.75rem 2rem 0.75rem 1rem;
+  width: 100%;
+  font: inherit;
+  font-size: 1.125rem;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  border: none;
+  border-radius: 0.25rem;
+  background: #ffffff;
+  box-shadow: 0 0.25rem 1rem 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  outline: none !important;
+}
+
+.css-select__dropdown {
+  border-radius: 10px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0.5rem;
+  width: 100%;
+  max-height: 9.75rem;
+  background: #ffffff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.25rem 1rem 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(1.25rem);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  overflow: auto;
+  z-index: 9999;
+}
+
+.css-select__dropdown::-webkit-scrollbar {
+  margin: 10px 0px;
+  width: 0.5rem;
+}
+
+.css-select__dropdown::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0.25rem;
+}
+
+.css-select__dropdown::-webkit-scrollbar-thumb {
+  background: #dbdbdb;
+  border-radius: 0.25rem;
+}
+
+.css-select__dropdown::-webkit-scrollbar-thumb:hover {
+  background: #9c9c9c;
+}
+
+.css-select:focus-within .css-select__dropdown {
+  transform: translateY(0.75rem);
+  opacity: 1;
+  visibility: visible;
+  border-radius: 10px;
+}
+
+.css-select__option {
+  display: block;
+  margin: 0;
+  padding: 0.5rem;
+  width: 100%;
+  font: inherit;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  line-height: 1.2;
+  border: none;
+  border-radius: 0.25rem;
+  background: transparent;
+  transition: background 0.3s ease;
+  cursor: pointer;
+  outline: none !important;
+}
+
+.css-select__option:hover,
+.css-select__option:focus {
+  background: #e9e9e9;
+}
