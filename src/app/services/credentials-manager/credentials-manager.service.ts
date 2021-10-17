@@ -14,7 +14,7 @@ export class CredentialsManagerService {
       username: 'Wilmer',
       password: 'pass',
       date: new Date(2021, 0, 26),
-      defaultUser: false,
+      defaultUser: true,
     },
     {
       username: 'Edwar',
@@ -67,6 +67,10 @@ export class CredentialsManagerService {
       return credentials;
     } */
     return this.getAll();
+  }
+
+  getDefaulUser(): UserCreential {
+    return this.credentials.filter(user => user.defaultUser)[0];
   }
 
   getLastUser(): UserCreential {
