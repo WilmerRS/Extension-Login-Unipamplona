@@ -1,10 +1,11 @@
-a > i {
+a>i {
   color: var(--gris-oscuro);
   text-align: center;
 }
 
-div > a {
+div>a {
   padding: 0px;
+  height: 100%;
 }
 
 .button {
@@ -13,27 +14,47 @@ div > a {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+  transition: all .4s ease-in-out;
 }
 
-a > .activo {
+.button:hover {
+  background-color: rgb(236, 236, 236);
+}
+
+.button:active {
+  background-color: rgb(212, 212, 212);
+}
+
+a>.activo {
+  transition: all .2s ease-in-out;
   color: var(--vinotinto);
 }
 
+.max-height {
+  height: 100%;
+  flex-direction: column;
+  transition: all .4s ease-in-out;
+}
+
 .bar {
+  transition: all .2s ease-in-out;
+  /* margin-top:auto; */
   width: 80px;
-  position: absolute;
+  /* position: absolute; */
   height: 4px;
   background-color: var(--vinotinto);
-  margin-bottom: -16px;
+  /* margin-bottom: -16px; */
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
 }
 
-.buttonTab {
+.button-tab {
+  height: 100%;
   outline: none;
   border: 0;
 }
 
 .button:hover {
-  color : #7c0000 !important;
+  color: #7c0000 !important;
 }

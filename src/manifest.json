@@ -1,34 +1,31 @@
 {
-    "manifest_version": 2,
-    "name": "Gestor de contraseñas UP ",
-    "description": "Permite escribir la contraseña de usuario directamente, y no mediante un código cifrado ",
-    "version": "1.1",
-    "icons":
-        {
-        "128" : "favicon.ico"
-        },
-    "permissions": [
-        "tabs",
-        "activeTab",
-        "contentSettings",
-        "declarativeContent",
-        "storage"
-    ],
-    "content_scripts": [
-      {
-        "matches": ["http://www.unipamplona.edu.co/"],
-        "js": ["extension/Content.js"]
-      }
-    ],
-    "background": {
-        "scripts": [
-            "extension/Background.js"
-        ],
-        "persistent": false
-    },
-    "page_action": {
-        "default_popup": "index.html",
-        "default_icon": "favicon.ico",
-        "default_title": "Login Unipamplona"
+  "manifest_version": 2,
+  "name": "ExUpa",
+  "description": "Permite escribir la contraseña de usuario directamente, y no mediante un código cifrado ",
+  "version": "1.1",
+  "icons": {
+    "128": "favicon.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "contentSettings",
+    "declarativeContent",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://www.unipamplona.edu.co/"],
+      "js": ["extension/Content.js"]
     }
+  ],
+  "background": {
+    "scripts": ["extension/Background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "index.html",
+    "default_icon": "favicon.png",
+    "default_title": "Login Unipamplona"
+  }
 }

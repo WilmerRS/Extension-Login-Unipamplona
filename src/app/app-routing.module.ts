@@ -1,4 +1,4 @@
-import { SingInComponent } from './pages/sing-in/home/sing-in.component';
+import { HomeComponent } from './pages/sing-in/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
@@ -17,7 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        component: SingInComponent,
+        component: HomeComponent,
       },
       {
         path: 'settings',

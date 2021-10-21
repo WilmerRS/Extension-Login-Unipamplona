@@ -1,5 +1,5 @@
-import { LoginInputsComponent } from './pages/sing-in/login-inputs/login-inputs.component';
-import { SingInComponent } from './pages/sing-in/home/sing-in.component';
+import { LoginComponent } from './pages/sing-in/login/login.component';
+import { HomeComponent } from './pages/sing-in/home/home.component';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,8 +23,7 @@ import { CredencialManagerComponent } from './pages/credencial-manager/credencia
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BackgroundBlobsComponent } from './shared/background-blobs/background-blobs.component';
 import { SocialBarComponent } from './shared/social-bar/social-bar/social-bar.component';
-import { LoginListComponent } from './pages/sing-in/login-list/login-list.component';
-import { ShareComponent } from './pages/sing-in/share/share.component';
+import { BrandComponent } from './shared/brand/brand.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +31,13 @@ import { ShareComponent } from './pages/sing-in/share/share.component';
     TabButtonComponent,
     LayoutComponent,
     NavBarComponent,
-    SingInComponent,
+    HomeComponent,
     AboutUsComponent,
     CredencialManagerComponent,
     BackgroundBlobsComponent,
     SocialBarComponent,
-    LoginInputsComponent,
-    LoginListComponent,
-    ShareComponent,
+    LoginComponent,
+    BrandComponent,
   ],
   imports: [
     BrowserModule,

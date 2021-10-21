@@ -16,8 +16,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.autologging();
 
-
-
     // let a: any[] = [];
     // this.db.getLikes().subscribe((usersSnapshot) => {
     //   usersSnapshot.forEach((snapshotChanges: any) => {

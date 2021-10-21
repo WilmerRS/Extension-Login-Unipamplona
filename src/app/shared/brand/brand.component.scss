@@ -1,0 +1,21 @@
+/* .width {
+  width: 5rem;
+} */
+
+.brand{
+  transition: all 0.4s ease-in-out;
+  /* min-width: 5rem; */
+}
+
+.brand:hover {
+  -webkit-transform: scale(1.07);
+  /* Safari and Chrome */
+  -moz-transform: scale(1.07);
+  /* Firefox */
+  -ms-transform: scale(1.07);
+  /* IE 9 */
+  -o-transform: scale(1.07);
+  /* Opera */
+  transform: scale(1.07);
+  overflow: visible;
+}

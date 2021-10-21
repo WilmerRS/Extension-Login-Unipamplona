@@ -1,16 +1,16 @@
-<div class="p-3 mt-1 cardBar row">
+<div class="p-1 mt-1 cardBar d-flex justify-content-around">
   <a href='#' (click)="this.handleClickLike($event)">
-    <div *ngIf = "isLike as value; else notLike">
-      <i class="material-icons p-3 col s4 center ">favorite</i>
+    <div *ngIf = "isLike as value; else notLike user-select-none">
+      <i class="material-icons p-2 col s4 center ">favorite</i>
     </div>
     <ng-template #notLike>
-      <i class="material-icons p-3 col s4 center color-base">favorite_border</i>
+      <i class="material-icons p-2 col s4 center color-base user-select-none">favorite_border</i>
     </ng-template>
   </a>
   <a  href='' (click)="this.handleClickShare($event)">
-    <i class="material-icons p-3 col s4 center color-base">share</i>
+    <i class="material-icons p-2 col s4 center color-base user-select-none">share</i>
   </a>
   <a  href='' (click)="this.handleClickLMore($event)">
-    <i class="material-icons p-3 col s4 center color-base">control_point</i>
+    <i class="material-icons p-2 col s4 center color-base user-select-none">control_point</i>
   </a>
 </div>

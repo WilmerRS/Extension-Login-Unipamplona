@@ -1,0 +1,109 @@
+<div class="text-center">
+  <!-- <img class="brand user-select-none" src="assets/brand-upa.svg" alt="" /> -->
+  <div class="brand-login pb-2">
+    <app-brand></app-brand>
+  </div>
+</div>
+<form [formGroup]="credentialForm" class="" (ngSubmit)="onSubmit()">
+  <div>
+    <h4 class="mb-1">
+      <strong>Iniciar sesión</strong>
+    </h4>
+  </div>
+  <!-- Alert result -->
+  <div *ngIf="isSubmitLogin">
+    <div *ngIf="isLoggedIn" class="mb-0 py-2 alert alert-success">
+      Inicio de sesión correcto.
+    </div>
+    <div *ngIf="!isLoggedIn" class="mb-0 py-2 alert alert-danger">
+      Ha ocurrido un error.
+    </div>
+  </div>
+  <!-- Loging list -->
+  <ng-template [ngIf]="isLoginByList">
+    <div class="pt-2">
+      <label class="form-label mb-0" for="username">Nombre de usuario</label>
+      <div class="pt-1">
+        <div class="css-select">
+          <input #inputSelectUsername type="text" id="select-input"
+            class="form-control css-select__selected px-3 py-2
+            input-select user-select-none"
+            formControlName="username"
+            (click)="visibilityDropdownUser()" />
+          <div class="css-select__dropdown"
+            [ngClass]="{'no-visible':!isVisibilityDropdownUser}">
+            <button type="button" class="css-select__option"
+              [id]="user.username"
+              [name]="user.username"
+              (click)="selectUser(user);"
+              *ngFor="let user of userCreential">
+              {{user.username}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <!-- Login credentials -->
+  <ng-template [ngIf]="!isLoginByList">
+    <div class="pt-2">
+      <div>
+        <label class="form-label mb-0" for="username">Nombre de usuario</label>
+        <div class="pt-1">
+          <input type="text" class="form-control px-3 py-2"
+            placeholder="Nombre de usuario"
+            formControlName="username">
+        </div>
+      </div>
+      <div class="pt-2">
+        <label class="form-label mb-0" for="username">Contraseña</label>
+        <div class="pt-1">
+          <input type="password" class="form-control px-3 py-2"
+            placeholder="Contraseña"
+            formControlName="password">
+        </div>
+      </div>
+      <div class="pt-2">
+        <div class="d-flex align-items-center">
+          <!--  <label class=""> -->
+          <input
+            class="form-check-input cursor-pointer ms-1" type="checkbox"
+            id="checkRemember"
+            name="checkRemember"
+            formControlName="checkRemember"
+            />
+          <div class="ms-2">
+            <label for="checkRemember" class="user-select-none cursor-pointer">Recordar
+              usuario</label>
+          </div>
+          <!-- </label> -->
+          <a routerLink="/settings" class="d-flex align-items-center ms-2">
+            <i class="user-select-none tiny
+              material-icons colorInfo">settings</i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <div class="pt-3 pb-2 d-flex justify-content-center">
+    <div class="buttonTab">
+      <button
+        id="btnDecode"
+        class="button d-flex justify-content-center align-items-center"
+        type="submit">
+        <span for="btnDecode" class="px-3 font-btn user-select-none">Iniciar
+          sesión</span>
+        <!-- <i class="size material-icons colorBtnIcon">keyboard_arrow_right</i> -->
+      </button>
+      <!-- <span routerLinkActive="bar"> </span> -->
+    </div>
+  </div>
+  <div class="text-center">
+    <a
+      class="link noselect"
+      href=""
+      (click)="this.handleRedirectTO($event)">
+      {{isLoginByList? "Usar credenciales":"Usar favoritos"}}
+    </a>
+  </div>
+</form>

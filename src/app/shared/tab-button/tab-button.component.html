@@ -1,7 +1,10 @@
-<div class="buttonTab" routerLink="{{ toRedirectPath }}">
-  <a class="waves-effect waves-dark button btn">
-    <i class="material-icons" routerLinkActive="activo">{{ iconPath }}</i>
-  </a>
-  <div class="pt-1"></div>
-  <span routerLinkActive="bar"> </span>
+<div class="button-tab pt-2 px-2" routerLink="{{ toRedirectPath }}">
+  <div class="max-height d-flex justify-content-space-between flex-direction-column">
+    <a class="button btn mb-2">
+      <i class="material-icons" routerLinkActive="activo">{{ iconPath }}</i>
+    </a>
+    <div class="d-flex align-items-end">
+      <span routerLinkActive="bar" class="m-0 p-0"> </span>
+    </div>
+  </div>
 </div>

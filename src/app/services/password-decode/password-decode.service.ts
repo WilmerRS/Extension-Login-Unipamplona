@@ -2,6 +2,7 @@ import { CredentialsManagerService } from 'src/app/services/credentials-manager/
 import { CredencialManagerComponent } from './../../pages/credencial-manager/credencial-manager.component';
 import { Injectable } from '@angular/core';
 import { UserData } from 'src/app/interfaces/user-data';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +12,12 @@ export class PasswordDecodeService {
   userData!: UserData;
 
   // Determina si se ha iniciado sesión correctamente
-  result = false;
+  /* result = false; */
+  isLoggedIn = new Subject<boolean>();
 
-  constructor(private credencialMng: CredentialsManagerService) {}
+  constructor(private credencialMng: CredentialsManagerService) {
+    this.isLoggedIn.next(false);
+  }
 
   /**
    * Inyecta el script de contenido y envia el mensaje con los datos del usuario.
@@ -70,12 +74,17 @@ export class PasswordDecodeService {
     chrome.runtime.onMessage.addListener(
       (request: any, sender: any, sendResponse: any) => {
         // console.log('Response del reques', request.loggedIn);
+        this.isLoggedIn.next(true);
         if (this.userData.checkRemember && request.loggedIn) {
           this.credencialMng.addUser(this.userData);
         }
         return true;
       }
     );
+  }
+
+  getListenerLoggedIn(){
+    return this.isLoggedIn.asObservable();
   }
 
   // done(userData: UserData): void{
