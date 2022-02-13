@@ -11,7 +11,7 @@ import {
 import { PasswordDecodeService } from '../../../services/password-decode/password-decode.service';
 
 @Component({
-  selector: 'app-sing-in',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })

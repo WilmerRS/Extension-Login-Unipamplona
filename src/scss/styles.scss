@@ -84,6 +84,28 @@ li {
   margin: auto 0;
 }
 
+/* icons */
+i.bi{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: var(--gris-oscuro);
+}
+
+i.bi::before{
+  font-size: 1.3rem;
+}
+
+i.bi:hover {
+  color: var(--vinotinto);
+}
+
+i.icon-red {
+  color: var(--vinotinto);
+}
+
+/* Checkbox */
+
 input[type="checkbox"] {
   transform: scale(1.2) !important;
 }

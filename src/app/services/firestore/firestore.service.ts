@@ -1,20 +1,20 @@
-import { AngularFirestore } from '@angular/fire/firestore';
+/* import { AngularFirestore } from '@angular/fire/firestore'; */
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FirestoreService {
-  constructor(private firestore: AngularFirestore) {}
+  constructor(/* private firestore: AngularFirestore */) {}
 
   getLikes() {
-    return this.firestore.collection('likes').snapshotChanges();
+    /* return this.firestore.collection('likes').snapshotChanges(); */
   }
 
   getMyLike(): any {
     const uuid = this.getUUID();
     if (uuid !== '') {
-      return this.firestore.collection('likes').doc(uuid).snapshotChanges();
+      /* return this.firestore.collection('likes').doc(uuid).snapshotChanges(); */
     }
   }
 
@@ -26,25 +26,25 @@ export class FirestoreService {
       date,
     };
     localStorage.setItem('uuid', JSON.stringify(data));
-    this.firestore.collection('users').doc(uuid).set(data);
+    /* this.firestore.collection('users').doc(uuid).set(data); */
   }
 
   modifyLastSession(uuid: string): void {
-    this.firestore
+    /* this.firestore
       .collection('users')
       .doc(uuid)
-      .update({ lastSession: new Date() });
+      .update({ lastSession: new Date() }); */
   }
 
   setLike(changeLike: boolean): void {
     // Se agrega un nuevo like al sistema
     const uuid = this.getUUID();
     if (!changeLike && uuid !== '') {
-      this.firestore.collection('likes').doc(uuid).set({ like: true });
+      /* this.firestore.collection('likes').doc(uuid).set({ like: true }); */
       return;
     }
 
-    this.firestore.collection('likes').doc(uuid).delete();
+    /* this.firestore.collection('likes').doc(uuid).delete(); */
   }
 
   private getUUID(): string {

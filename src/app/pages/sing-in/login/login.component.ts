@@ -1,7 +1,15 @@
 import { CredentialsManagerService } from 'src/app/services/credentials-manager/credentials-manager.service';
 import { UserCreential } from 'src/app/interfaces/user-credential';
 import { PasswordDecodeService } from '../../../services/password-decode/password-decode.service';
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -17,11 +25,11 @@ export class LoginComponent implements OnInit {
   /* isSubmitted = false; */
   userCreential!: UserCreential[];
   credentialForm!: FormGroup;
-  currentUsernameForm!: FormGroup;
+  /* currentUsernameForm!: FormGroup; */
   /* currentUsername = ''; */
 
   isVisibilityDropdownUser = false;
-  isLoginByList = true;
+  isLoginByList = false;
 
   isSubmitLogin = false;
   isLoggedIn = false;
@@ -49,16 +57,16 @@ export class LoginComponent implements OnInit {
     if (defaultUser) {
       username = defaultUser.username;
       password = defaultUser.password;
-      /* this.currentUsername = username; */
     }
     this.credentialForm = this.formBuilder.group({
       username: [username, Validators.required],
       password: [password, Validators.required],
       checkRemember: [false],
+      current_username: [username, Validators.required],
     });
-    this.currentUsernameForm = this.formBuilder.group({
-      username: [username, Validators.required],
-    });
+    /* this.currentUsernameForm = this.formBuilder.group({
+      current_username: [{ value: username, disabled: true }, Validators.required],
+    }); */
   }
 
   handleRedirectTO(e: Event): void {
@@ -97,12 +105,12 @@ export class LoginComponent implements OnInit {
     /* this.currentUsername = option.username; */
     this.visibilityDropdownUser();
     this.credentialForm.patchValue({ ...option });
-    this.currentUsernameForm.patchValue({ username: option.username });
+    /* this.currentUsernameForm.patchValue({ username: option.username }); */
     /* console.log(this.credentialForm.value); */
     /* this.isVisibilityDropdownUser = true; */
   }
 
-  getFilteredUsers(): UserCreential[] {
+  /* getFilteredUsers(): UserCreential[] {
     const user = this.credentialForm.value.username;
     if (
       user === this.currentUsernameForm.value.username ||
@@ -113,14 +121,24 @@ export class LoginComponent implements OnInit {
     return this.userCreential.filter((user) =>
       user.username.startsWith(this.currentUsernameForm.value.username)
     );
-  }
+  } */
 
-  visibilityDropdownUser(): void {
+  visibilityDropdownUser(/* $event: any, deep: number */): void {
+    /* let input: any = $event.target.parentNode;
+    if (deep === 1) {
+      console.log($event.target.parentNode, 'hola');
+      input = $event.target.parentNode.parentNode;
+    } */ /* else {
+      console.log($event.target.parentNode.parentNode, 'hola');
+      const input: any = $event.target.parentNode;
+    } */
     const input: any = this.inputSelectUsername.nativeElement;
-    if (this.isVisibilityDropdownUser){
-      input.blur();
+    if (this.isVisibilityDropdownUser) {
+      /* input.blur(); */
+      setTimeout(() => void input.blur(), 0);
     } else {
-      input.focus();
+      setTimeout(() => void input.focus(), 0);
+      /* input.focus(); */
     }
     this.isVisibilityDropdownUser = !this.isVisibilityDropdownUser;
   }
@@ -155,6 +173,11 @@ export class LoginComponent implements OnInit {
    * Inicia la decodificación de la contraseña y su validación.
    */
   onSubmit(): void {
-    this.passwordDecodeService.decodePassword(this.credentialForm.value);
+    if (this.credentialForm.valid) {
+      this.passwordDecodeService.decodePassword(this.credentialForm.value).subscribe((data) => {
+        this.isSubmitLogin = true;
+        this.isLoggedIn = data;
+      });;
+    }
   }
 }

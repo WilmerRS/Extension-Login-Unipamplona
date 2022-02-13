@@ -11,8 +11,8 @@ export class CredentialsManagerService {
 
   credentials: UserCreential[] = [
     {
-      username: 'Wilmer',
-      password: 'pass',
+      username: 'wilmerrodriguezs',
+      password: 'wilmer684',
       date: new Date(2021, 0, 26),
       defaultUser: true,
     },

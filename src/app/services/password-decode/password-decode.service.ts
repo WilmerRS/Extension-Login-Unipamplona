@@ -2,7 +2,7 @@ import { CredentialsManagerService } from 'src/app/services/credentials-manager/
 import { CredencialManagerComponent } from './../../pages/credencial-manager/credencial-manager.component';
 import { Injectable } from '@angular/core';
 import { UserData } from 'src/app/interfaces/user-data';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -23,12 +23,13 @@ export class PasswordDecodeService {
    * Inyecta el script de contenido y envia el mensaje con los datos del usuario.
    * @param userData Datos del usuario
    */
-  public decodePassword(userData: UserData): void {
+  public decodePassword(userData: UserData): Observable<boolean> {
     this.userData = userData;
     this.inyectContentScript('ContentScript');
     this.inyectContentScript('Response');
     this.sendMessageToContentScript();
     this.listenerLoggedIn();
+    return this.isLoggedIn.asObservable();
   }
 
   /**
@@ -42,21 +43,10 @@ export class PasswordDecodeService {
         {
           username: this.userData.username,
           password: this.userData.password,
-        } // ,
-        // (response: any) => {
-        //   console.log('Class: password-decode.service. linea:38. Replicacion de CS: ' + response.replication);
-        //   try {
-        //     switch (response.replication) {
-        //       case 'Done':
-        //         this.done(userData);
-        //         break;
-        //       case 'Error':
-        //         this.error(userData);
-        //     }
-        //   } catch (error) {
-        //     console.log('Se ha generado un error. ', error);
-        //   }
-        // }
+        } ,// ,,
+        (response: any) => {
+          this.isLoggedIn.next(true);
+        }
       );
     });
   }
@@ -83,7 +73,7 @@ export class PasswordDecodeService {
     );
   }
 
-  getListenerLoggedIn(){
+  getListenerLoggedIn(): Observable<boolean> {
     return this.isLoggedIn.asObservable();
   }
 

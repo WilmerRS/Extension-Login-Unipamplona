@@ -1,6 +1,5 @@
 import { FirestoreService } from './../../../services/firestore/firestore.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-social-bar',
   templateUrl: './social-bar.component.html',
@@ -8,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SocialBarComponent implements OnInit {
   isLike = false;
+
   constructor(private db: FirestoreService) {}
 
   ngOnInit(): void {
@@ -25,12 +25,14 @@ export class SocialBarComponent implements OnInit {
 
   handleClickLMore(e: Event): any {
     e.preventDefault();
+    this.isLike = true;
   }
 
   onLike(): any {
+    this.isLike = true;
     // Saber si el usuario ya dio like
-    this.db.getMyLike().subscribe((doc: any) => {
+    /* this.db.getMyLike().subscribe((doc: any) => {
       this.isLike = doc.type === 'added' || doc.type === 'modified';
-    });
+    }); */
   }
 }

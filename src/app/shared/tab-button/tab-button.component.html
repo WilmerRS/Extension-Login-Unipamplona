@@ -1,7 +1,29 @@
 <div class="button-tab pt-2 px-2" routerLink="{{ toRedirectPath }}">
-  <div class="max-height d-flex justify-content-space-between flex-direction-column">
+  <div
+    class="
+      max-height
+      d-flex
+      justify-content-space-between
+      flex-direction-column
+    "
+  >
     <a class="button btn mb-2">
-      <i class="material-icons" routerLinkActive="activo">{{ iconPath }}</i>
+      <div
+        *ngIf="isActive(); else noActive"
+      >
+        <i
+          class="material-icons bi"
+          [ngClass]="[iconPath + '-fill','icon-red']"
+          routerLinkActive="activo"
+        ></i>
+      </div>
+      <ng-template #noActive>
+        <i
+          class="material-icons bi"
+          [ngClass]="iconPath"
+          routerLinkActive="activo"
+        ></i>
+      </ng-template>
     </a>
     <div class="d-flex align-items-end">
       <span routerLinkActive="bar" class="m-0 p-0"> </span>
